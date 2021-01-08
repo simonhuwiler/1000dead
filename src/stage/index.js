@@ -175,14 +175,9 @@ function Stage(props) {
         postprocessing.composer.render( 0.1 );
 
 
-      },
-      // called while loading is progressing
-      xhr => console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' ),
-      // called when loading has errors
-      error => console.log( 'An error happened', error )
+      }
     );
   
-
     // Prepare Postprocessing
     postprocessing.bokeh.uniforms.focus.value = settings.effectControllerDefault.focus;
     postprocessing.bokeh.uniforms.aperture.value = settings.effectControllerDefault.aperture;

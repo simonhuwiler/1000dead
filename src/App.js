@@ -10,15 +10,13 @@ function App() {
   const [callEvent, setcallEvent] = useState(null);
 
   return (
-    <div className='app'>
+    <div>
 
-      <header className='ui vertical  very fitted  segment' style={{height: '100vh'}}>
-        <div className='ui container'>
-          <div className='ui header'>
-            <h1>1000 Tote</h1>
-            <h2>Am 15. März stirbt in Zürich die erste Person an Corona. Diese Woche meldet der Kanton das tausendste Corona-Opfer. So wütete Corona.</h2>
-          </div> 
-        </div>
+      <header>
+        <div className='title'>
+          <h1>1000 Dead</h1>
+          <h2>Am 15. März stirbt in Zürich die erste Person an Corona. Diese Woche meldet der Kanton das tausendste Corona-Opfer. So wütete Corona.</h2>
+        </div> 
       </header>
 
       <div className='daycounter'>13. März</div>
@@ -105,6 +103,11 @@ function App() {
 
         </ScrollEvents>
       </div>
+
+      <footer>
+        Contact: <a href='https://www.journalist.sh'>journalist.sh</a><br />
+        Source Code: <a href='https://github.com/simonhuwiler/1000dead'>GitHub</a>
+      </footer>
 
       
       <Stage callEvent={callEvent}/>

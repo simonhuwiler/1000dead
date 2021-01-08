@@ -1,10 +1,67 @@
+body
+{
+  padding: 0;
+  margin: 0;
+}
 
-#app {
-  // prevents "swimming" layout on mobile
-  overflow: hidden;
-  // add all styles that should apply to the whole project within this
-  // The ID "app" is part of the HTML template, and is the entry point where
-  // the React components are being injected into.
+#root {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+
+  header
+  {
+    height: 100vh;
+    padding: 0 10px;
+    
+    .title
+    {
+      max-width: 100%;
+      width: 900px;
+      margin: 0 auto;
+      padding-top: 50px;
+      
+      @media only screen and (min-width: 768px) {
+        padding-top: 100px;
+      }
+
+      h1
+      {
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 3em;
+        margin: 0;
+        @media only screen and (min-width: 768px) {
+          font-size: 5em;
+        }
+      }
+
+      h2
+      {
+        font-weight: 300;
+        margin: 20px 0 0 0;
+        line-height: 1.4em;
+        font-size: 1.2em;
+        @media only screen and (min-width: 768px) {
+          font-size: 1.5em;
+        }
+      }
+    }
+  }
+
+  footer
+  {
+    background-color: white;
+    color: grey;
+    margin: 0;
+    padding: 10px;
+    font-size: 0.9em;
+    font-weight: 300;
+  }
+
+  a, a:visited, a:hover, a:active
+  {
+    color: black;
+  }
 
   .content
   {
@@ -20,7 +77,8 @@
     transform: translateX(-50%);
     background-color: white;
     padding: 5px;
-    font-family: var(--chart-font-stack);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.2em;
     // font-weight: bold;
     display: none;
   }
