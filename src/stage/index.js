@@ -137,7 +137,7 @@ function Stage(props) {
         blueprint.castShadow = true;
         blueprint.rotation.x = -1.57;
         blueprint.traverse( object => object.isMesh ? object.castShadow = true : null);
-        
+
         // Create Coffin for each death
         for(const i in data)
         {
@@ -151,7 +151,8 @@ function Stage(props) {
             coffin.position.y = (j + 1) * ( settings.dimension.y + settings.padding.y ) - ( settings.dimension.y + settings.padding.y )
             coffin.position.z = (settings.dimension.z + settings.padding.z) * -i;
       
-            coffin.visible = false;
+            coffin.material.opacity = 0;
+            coffin.material.transparent = true;
 
             // Add       
             scene.add(coffin);
@@ -160,7 +161,8 @@ function Stage(props) {
         }
 
         // Reposition first Coffin
-        coffins[0].visible = true
+        coffins[0].material = blueprint.material.clone()
+        coffins[0].material.opacity = 1;
         coffins[0].rotation.z = Math.PI / 2;
         coffins[0].position.x = settings.dimension.x / 2;
     
@@ -213,7 +215,6 @@ function Stage(props) {
   }
 
   const stopAnimation = () => {
-    console.log("STOP")
     runAnimation.current = false;
   }
 

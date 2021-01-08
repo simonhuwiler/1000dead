@@ -1,42 +1,34 @@
 var TWEEN = require('@tweenjs/tween.js');
 const settings = require('./settings');
 var dateFormat = require("dateformat");
-dateFormat.i18n = {
-  monthNames: [
-    "Jan",
-    "Feb",
-    "Mär",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-    "Januar",
-    "Februar",
-    "März",
-    "April",
-    "Mai",
-    "Juni",
-    "Juli",
-    "August",
-    "September",
-    "Oktober",
-    "November",
-    "Dezember",
-  ]
-};
-
-// var tweens = []
-// const addTween = t => tweens.push(t);
-
-// const stoppAllTweents = () => {
-//   tweens.forEach(t => t.stop())
-//   tweens = [];
-// }
+// dateFormat.i18n = {
+//   monthNames: [
+//     "Jan",
+//     "Feb",
+//     "Mär",
+//     "Apr",
+//     "May",
+//     "Jun",
+//     "Jul",
+//     "Aug",
+//     "Sep",
+//     "Oct",
+//     "Nov",
+//     "Dec",
+//     "Januar",
+//     "Februar",
+//     "März",
+//     "April",
+//     "Mai",
+//     "Juni",
+//     "Juli",
+//     "August",
+//     "September",
+//     "Oktober",
+//     "November",
+//     "Dezember",
+//   ]
+// };
 
 const beforeAnimation = () => {
   TWEEN.removeAll()
@@ -85,19 +77,22 @@ const moveToDate = (stage, animation, day, rotation, speed) =>
 }
 
 const chapter_one = (stage, animation) => {
-  // Show all coffings
-  stage.coffins.forEach(c => c.visible = true);
-
-  // Change Blur
+  // Add Post Processing Blur
   stage.postprocessing.bokeh.uniforms[ "aperture" ].value = 0.000005;
 
   // Start Animation
   beforeAnimation();
   animation.startAnimation();
+
+  // Show all coffings (all share the same material)
+  new TWEEN.Tween({value: stage.coffins[1].material.opacity})
+    .to({value: 1}, 500)
+    .onUpdate(opa => stage.coffins[1].material.opacity = opa.value)
+    .start();
+
   new TWEEN.Tween(stage.camera.position)
     .to({x: 50, y: 140, z: 120}, 2000)
     .easing(TWEEN.Easing.Quadratic.Out)
-    // .onComplete(animation.stopAnimation())
     .start();
 
   animation.startAnimation();
