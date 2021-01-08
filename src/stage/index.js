@@ -9,7 +9,7 @@ import { BokehPass } from 'three/examples/jsm/postprocessing/BokehPass.js';
 import events from './events.js'
 import settings from './settings.js'
 
-import coffinClosed from './closed_coffin2.gltf';
+// import coffinClosed from './closed_coffin2.gltf';
 
 const TWEEN = require('@tweenjs/tween.js');
 
@@ -127,10 +127,8 @@ function Stage(props) {
     postprocessing.composer = composer;
     postprocessing.bokeh = bokehPass;
 
-    console.log(require('./closed_coffin2.gltf'))
-
     loader.load(
-      coffinClosed,
+      'closed_coffin2.gltf',
       // called when the resource is loaded
       function ( gltf ) {
 
