@@ -1,0 +1,28 @@
+
+#app {
+  // prevents "swimming" layout on mobile
+  overflow: hidden;
+  // add all styles that should apply to the whole project within this
+  // The ID "app" is part of the HTML template, and is the entry point where
+  // the React components are being injected into.
+
+  .content
+  {
+    position: relative;
+  }
+
+  .daycounter
+  {
+    position: fixed;
+    z-index: 100;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 5px;
+    font-family: var(--chart-font-stack);
+    // font-weight: bold;
+    display: none;
+  }
+
+}
