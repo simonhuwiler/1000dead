@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+// import GLTFLoader from 'three-gltf-loader';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { BokehPass } from 'three/examples/jsm/postprocessing/BokehPass.js';
 
 import events from './events.js'
 import settings from './settings.js'
+
+import coffinClosed from './closed_coffin2.gltf';
 
 const TWEEN = require('@tweenjs/tween.js');
 
@@ -124,10 +127,10 @@ function Stage(props) {
     postprocessing.composer = composer;
     postprocessing.bokeh = bokehPass;
 
-    console.log(require('./closed_coffin.gltf'))
+    console.log(require('./closed_coffin2.gltf'))
 
     loader.load(
-      require('./closed_coffin.gltf'),
+      coffinClosed,
       // called when the resource is loaded
       function ( gltf ) {
 
