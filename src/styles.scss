@@ -9,6 +9,21 @@ body
   margin: 0;
   padding: 0;
 
+  .language
+  {
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    color: grey;
+    padding: 5px;
+
+    span
+    {
+      cursor: pointer;
+    }
+  }
+
   header
   {
     height: 100vh;
