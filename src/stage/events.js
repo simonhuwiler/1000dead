@@ -40,7 +40,7 @@ const tweenDate = (stage, to, time) => {
 
   new TWEEN.Tween({c: settings.DayByZ(stage.camera.position.z)})
     .to({c: to}, time)
-    .easing(TWEEN.Easing.Quadratic.Out)
+    .easing(TWEEN.Easing.Cubic.InOut)
     .onUpdate(e => {
       var result = new Date('2020-03-15');
       result.setDate(result.getDate() + e.c);
@@ -64,12 +64,12 @@ const moveToDate = (stage, animation, day, rotation, speed) =>
 
   new TWEEN.Tween(stage.camera.rotation)
     .to({x: r.x, y: r.y, z: r.z}, speed)
-    .easing(TWEEN.Easing.Quadratic.InOut)
+    .easing(TWEEN.Easing.Cubic.InOut)
     .start();  
 
   new TWEEN.Tween(stage.camera.position)
     .to({x: settings.cameraMoving.x, y: settings.cameraMoving.y, z: settings.zByDay(day)}, speed)
-    .easing(TWEEN.Easing.Quadratic.InOut)
+    .easing(TWEEN.Easing.Cubic.InOut)
     .onComplete(() =>animation.stopAnimation())
     .start();
 
@@ -86,19 +86,20 @@ const chapter_one = (stage, animation) => {
 
   // Show all coffings (all share the same material)
   new TWEEN.Tween({value: stage.coffins[1].material.opacity})
-    .to({value: 1}, 500)
+    .to({value: 1}, 1500)
+    .easing(TWEEN.Easing.Cubic.InOut)
     .onUpdate(opa => stage.coffins[1].material.opacity = opa.value)
     .start();
 
   new TWEEN.Tween(stage.camera.position)
-    .to({x: 50, y: 140, z: 120}, 2000)
-    .easing(TWEEN.Easing.Quadratic.Out)
+    .to({x: 0, y: 140, z: 120}, 2000)
+    .easing(TWEEN.Easing.Quadratic.InOut)
     .start();
 
   animation.startAnimation();
   new TWEEN.Tween(stage.camera.rotation)
     .to({x: 0, y: 0, z: 0}, 2000)
-    .easing(TWEEN.Easing.Quadratic.Out)
+    .easing(TWEEN.Easing.Cubic.InOut)
     .onComplete(() =>animation.stopAnimation())
     .start();  
 
@@ -156,11 +157,7 @@ const wave2day280 = (stage, animation) => {
 }
 
 const wave2day299 = (stage, animation) => {
-  moveToDate(stage, animation, 300, {x: -0.5, y: 0, z: 0}, 7000)  
-}
-
-const wave2end = (stage, animation) => {
- moveToDate(stage, animation, 297, {x: 0}, 5000) 
+  moveToDate(stage, animation, 302, {x: -0.5, y: 0, z: 0}, 7000)  
 }
 
 const stapel = (stage, animation) => {
@@ -237,4 +234,4 @@ const stapel = (stage, animation) => {
 
 
 module.exports.chapters = {chapter_one, chapter_two, endof1wave, startof1wave, wave2topdayfirstwave, wave2day253,
-  wave2day261, wave2day267, wave2day270, wave2day280, wave2day285, wave2day299, wave2end, stapel}
+  wave2day261, wave2day267, wave2day270, wave2day280, wave2day285, wave2day299, stapel}

@@ -164,15 +164,17 @@ function Stage(props) {
         coffins[0].material = blueprint.material.clone()
         coffins[0].material.opacity = 1;
         coffins[0].rotation.z = Math.PI / 2;
-        coffins[0].position.x = settings.dimension.x / 2;
+        coffins[0].position.x = 0;
     
         // Reposition last Coffin
         coffins[coffins.length - 1].rotation.z = Math.PI / 2;
-        coffins[coffins.length - 1].position.x = settings.dimension.x / 2;        
+        coffins[coffins.length - 1].position.x = 0;
+        coffins[coffins.length - 1].position.y = 0;
+        coffins[coffins.length - 1].position.z = coffins[coffins.length - 1].position.z - 300;
 
         const y = 50;
         
-        camera.position.set(settings.dimension.x / 2, y, 330);
+        camera.position.set(0, y, 330);
         postprocessing.composer.render( 0.1 );
       }
     );
