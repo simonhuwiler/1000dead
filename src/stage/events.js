@@ -64,12 +64,12 @@ const moveToDate = (stage, animation, day, rotation, speed) =>
 
   new TWEEN.Tween(stage.camera.rotation)
     .to({x: r.x, y: r.y, z: r.z}, speed)
-    .easing(TWEEN.Easing.Cubic.InOut)
+    .easing(TWEEN.Easing.Quadratic.InOut)
     .start();  
 
   new TWEEN.Tween(stage.camera.position)
     .to({x: settings.cameraMoving.x, y: settings.cameraMoving.y, z: settings.zByDay(day)}, speed)
-    .easing(TWEEN.Easing.Cubic.InOut)
+    .easing(TWEEN.Easing.Quadratic.InOut)
     .onComplete(() =>animation.stopAnimation())
     .start();
 
@@ -115,12 +115,10 @@ const chapter_two = (stage, animation) => {
 
 const endof1wave = (stage, animation) => {
     
-  moveToDate(stage, animation, 46, {y: 0}, 7000)
+  moveToDate(stage, animation, 46, {y: 0}, 9000)
 }
 
 const startof1wave = (stage, animation) => {
-
-
   moveToDate(stage, animation, 225, {x: 0}, 5000)
 }
 
