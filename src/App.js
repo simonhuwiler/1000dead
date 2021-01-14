@@ -15,7 +15,7 @@ function T(props)
 }
 
 function App() {
-  const [callEvent, setcallEvent] = useState(null);
+  const [callEvent, setCallEvent] = useState(null);
   const [lng, setLng] = useState('en');
 
   useEffect(() => {
@@ -66,7 +66,7 @@ function App() {
             />
           </Chapter>
 
-          <Event id='chapter_one'  event={() => setcallEvent('chapter_one')}>
+          <Event id='chapter_one'  event={() => setCallEvent('chapter_one')}>
             <Chapter>
               <T lng={lng}
                 de="Er sollte nicht lange das einzige Opfer bleiben. <b>In bisher zwei Wellen</b> brach Corona über Zürich herein. Was Sie hier sehen: Jede verstorbene Person. Ein Turm entspricht dabei einem Tag. Beginnen wir mit der ersten Welle."
@@ -75,7 +75,7 @@ function App() {
             </Chapter>
           </Event>
 
-          <Event id='wave1start' event={() => setcallEvent('chapter_two')}>
+          <Event id='wave1start' event={() => setCallEvent('chapter_two')}>
             <Chapter>
               <T lng={lng}
                 de="Die erste Welle lief langsam an. Zuerst nur <b>vereinzelte Todesfälle</b>, neun Tage nach dem ersten Fall steigt die Kurve plötzlich an. <b>Einschneidende Massnahmen werden beschlossen.</b> Die Ansteckungskette ist gebrochen. Vorerst."
@@ -84,7 +84,7 @@ function App() {
             </Chapter>
           </Event>
 
-          <Event id='wave1end' event={() => setcallEvent('endof1wave')}>
+          <Event id='wave1end' event={() => setCallEvent('endof1wave')}>
             <Chapter>
               <T lng={lng}
                 de="Die erste Welle dauerte bis Anfang Mai und forderte das Leben von rund <b>126 Zürcherinnen und Zürcher.</b> Der Kanton atmete auf, man schien mit einem blauen Auge davongekommen zu sein. Strassen füllen sich wieder, Geschäfte öffneten ihre Türen und aus Restaurants dringen die Geräusche des Lebens. Während des Sommers blieb es ruhig, nur vereinzelte sterben Menschen am Coronavirus."
@@ -93,7 +93,7 @@ function App() {
             </Chapter>
           </Event>
           
-          <Event id='wave2start' event={() => setcallEvent('startof1wave')}>
+          <Event id='wave2start' event={() => setCallEvent('startof1wave')}>
             <Chapter>
               <T lng={lng}
                 de="Das ändert sich Ende Oktober <b>schlagartig</b>. Während die Temperaturen fallen steigen die Infektionszahlen. Und auf die Neuinfektionen folgen die Spitalaufenthalte. Und auf die Spitalaufenthalte die Toten. Die <b>zweite Welle bricht erbarmungslos über den Kanton herein</b> und sie sollte die erste bei weitem übertreffen."
@@ -102,7 +102,7 @@ function App() {
             </Chapter>
           </Event>
 
-          <Event id='wave2topdayfirstwave' event={() => setcallEvent('wave2topdayfirstwave')}>
+          <Event id='wave2topdayfirstwave' event={() => setCallEvent('wave2topdayfirstwave')}>
             <Chapter>
               <T lng={lng}
                 de="Bereits nach wenigen Wochen, am 2. November, <b>überschreiten wir den Höchstwert</b> aus der erste Welle – neun Personen sterben an einem einzigen Tag. Es ist ebenfalls jene Woche, in der die statistisch erwartbare Sterblichkeit der über 65-jährigen erneut überschritten wird. Ein Zeichen, dass Corona keine normale Grippe ist."
@@ -111,7 +111,7 @@ function App() {
             </Chapter>
           </Event>
           
-          <Event id='wave2day253' event={() => setcallEvent('wave2day253')}>
+          <Event id='wave2day253' event={() => setCallEvent('wave2day253')}>
             <Chapter>
               <T lng={lng}
                 de="23. November: Erneut ein neuer Rekord, <b>15 Menschen sterben</b> alleine an diesem Tag."
@@ -120,7 +120,7 @@ function App() {
             </Chapter>
           </Event>
           
-          <Event id='wave2day261' event={() => setcallEvent('wave2day261')}>
+          <Event id='wave2day261' event={() => setCallEvent('wave2day261')}>
             <Chapter>
               <T lng={lng}
                 de="Acht Tage später: <b>19 Todesfälle</b> an einem Tag."
@@ -129,7 +129,7 @@ function App() {
             </Chapter>
           </Event>
           
-          <Event id='wave2day270' event={() => setcallEvent('wave2day270')}>
+          <Event id='wave2day270' event={() => setCallEvent('wave2day270')}>
             <Chapter>
               <T lng={lng}
                 de="Draussen leuchten die Adventslichter, in den Notaufnahmen werden die Betten knapp.  Am 10. Dezember <b>wird der Rekord erneut gebrochen:</b> 21 Todesopfer an einem Tag."
@@ -138,7 +138,7 @@ function App() {
             </Chapter>
           </Event>
           
-          <Event id='wave2day280' event={() => setcallEvent('wave2day280')}>
+          <Event id='wave2day280' event={() => setCallEvent('wave2day280')}>
             <Chapter>
               <T lng={lng}
                 de="Vier Tage vor Heiligabend meldet der Kanton den <b>vorläufigen Höhepunkt: 25 Todesopfer.</b> Auch die statistische Sterblichkeit ist mit 332.5 Todesfällen pro Woche deutlich über dem normalen Wert."
@@ -147,7 +147,7 @@ function App() {
             </Chapter>
           </Event>
           
-          <Event id='wave2day299' event={() => setcallEvent('wave2day299')}>
+          <Event id='wave2day299' event={() => setCallEvent('wave2day299')}>
             <Chapter>
               <T lng={lng}
                 de="Freitag, der 8. Januar. An diesem Tag <b>stirbt der tausendste Zürcher.</b> Erst drei Tage später, nach dem Wochenende, wissen dies die Behörden. Am gleichen Tag kommuniziert der Kanton, wie in Pflege- und Altersheimen geimpft werden soll. <b>Ein Hoffnungsschimmer.</b>"

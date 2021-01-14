@@ -14,6 +14,8 @@ require('./styles.scss');
 // Data of the death
 const data = require('../data/data.json');
 
+const mesh3d = 'closed_coffin2.gltf';
+
 function Stage(props) {
 
   const [stageSettings, setStageSettings] = useState(null);
@@ -129,7 +131,7 @@ function Stage(props) {
     const loader = new GLTFLoader();    
     const coffins = [];
     loader.load(
-      'closed_coffin2.gltf',
+      mesh3d,
       gltf => {
 
         // Blueprint
