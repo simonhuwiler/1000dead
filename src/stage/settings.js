@@ -17,7 +17,7 @@ module.exports.cameraMoving = {x: 0, y: 150}
 module.exports.effectControllerDefault = {
   focus: 500.0,
   aperture: 0,
-  maxblur: 0.01
+  maxblur: 0.005
 };
 
 // Position of Stapel at the end
