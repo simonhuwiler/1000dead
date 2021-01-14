@@ -10,3 +10,10 @@ Stay healthy!
 git clone git@github.com:simonhuwiler/1000dead.git
 npm install
 ```
+
+## Adapt
+* Add your 3d-mesh: Replace `public/closed_coffin2.gltf` or change it in `src/stage/index.js`
+* Change days and height of staples in `src/data/data.json`
+* Change chapters in `src/App.js`
+* Add your animation event to `src/stage/events.js` and add it to `module.exports.chapters`
+* Reference your event in `<Event id='wave2start' event={() => setCallEvent('MyFunctionName')}>`. Be aware: Each `Event` needs a unique id.
