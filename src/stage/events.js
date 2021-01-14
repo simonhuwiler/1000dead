@@ -1,34 +1,30 @@
 var TWEEN = require('@tweenjs/tween.js');
 const settings = require('./settings');
 var dateFormat = require("dateformat");
-// dateFormat.i18n = {
-//   monthNames: [
-//     "Jan",
-//     "Feb",
-//     "Mär",
-//     "Apr",
-//     "May",
-//     "Jun",
-//     "Jul",
-//     "Aug",
-//     "Sep",
-//     "Oct",
-//     "Nov",
-//     "Dec",
-//     "Januar",
-//     "Februar",
-//     "März",
-//     "April",
-//     "Mai",
-//     "Juni",
-//     "Juli",
-//     "August",
-//     "September",
-//     "Oktober",
-//     "November",
-//     "Dezember",
-//   ]
-// };
+
+var rootLng = 'de';
+
+module.exports.setLanguage = lng => {
+  rootLng = lng;
+  if(lng === 'de')
+  {
+    dateFormat.i18n = {
+      monthNames: [
+        "Jan", "Feb", "Mär","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",
+        "Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"
+      ]
+    };
+  }
+  else
+  {
+    dateFormat.i18n = {
+      monthNames: [
+        "Jan", "Feb", "Mär","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",
+        "January","Feburary","March","April","May","June","July","August","September","October","November","December"
+      ]
+    };
+  }  
+}
 
 const beforeAnimation = () => {
   TWEEN.removeAll()
@@ -44,14 +40,13 @@ const tweenDate = (stage, to, time) => {
     .onUpdate(e => {
       var result = new Date('2020-03-15');
       result.setDate(result.getDate() + e.c);
-      dom.innerHTML = dateFormat(result, "d. mmmm yyyy");
+      dom.innerHTML = rootLng === 'de' ? dateFormat(result, "d. mmmm yyyy") : dateFormat(result, "d mmmm yyyy");
     })
     .start();
 }
 
 const moveToDate = (stage, animation, day, rotation, speed) =>
 {
-
   var r = {
     x: rotation.x ? rotation.x : 0,
     y: rotation.y ? rotation.y : 0,

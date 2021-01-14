@@ -185,7 +185,8 @@ function Stage(props) {
       scene,
       renderer,
       coffins,
-      postprocessing
+      postprocessing,
+      lng: props.lng
     })
 
     // Register Window Resize
@@ -228,7 +229,10 @@ function Stage(props) {
   // Event-Manager
   const animationSettings = {startAnimation, stopAnimation, render};
   if(props.callEvent)
+  {
+    events.setLanguage(props.lng)
     events.chapters[props.callEvent](stageSettings, animationSettings)
+  }
 
   return (
     <div id='three' />

@@ -6,9 +6,6 @@ import Stage from './stage/index'
 
 import './styles.scss'
 
-var dateFormat = require("dateformat");
-
-
 function T(props)
 {
   if(props.lng === 'de')
@@ -27,27 +24,6 @@ function App() {
     if(['de-ch', 'de-de', 'de-at', 'de-li', 'de-lu', 'de'].includes(language.toLowerCase()))
       setLng('de')
   }, []);
-
-  useEffect(() => {
-    if(lng === 'de')
-    {
-      dateFormat.i18n = {
-        monthNames: [
-          "Jan", "Feb", "Mär","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",
-          "Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"
-        ]
-      };
-    }
-    else
-    {
-      dateFormat.i18n = {
-        monthNames: [
-          "Jan", "Feb", "Mär","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",
-          "January","Feburary","March","April","May","June","July","August","September","October","November","December"
-        ]
-      };
-    }
-  }, [lng])
 
   return (
     <div>
@@ -85,7 +61,7 @@ function App() {
 
           <Chapter style={{paddingTop: 0}}>
             <T lng={lng}
-              de="Coronas erstes Zürcher Opfer: <b>Männlich, 88-jährig, vorerkrankt</b>, Behandlung auf eigenen Wunsch nur Palliativ."
+              de="Coronas erstes Zürcher Opfer: <b>Männlich, 88-jährig, vorerkrankt,</b> Behandlung auf eigenen Wunsch nur Palliativ."
               en="First victim of corona: <b>Male, 88 years old, pre-existing conditions,</b> no life prolonging measures as he requested."
             />
           </Chapter>
@@ -111,8 +87,8 @@ function App() {
           <Event id='wave1end' event={() => setcallEvent('endof1wave')}>
             <Chapter>
               <T lng={lng}
-                de="Die erste Welle dauerte bis Anfang Mai und forderte das Leben von rund <b>126 Zürcherinnen und Zürcher</b>. Der Kanton atmete auf, man schien mit einem blauen Auge davongekommen zu sein. Strassen füllen sich wieder, Geschäfte öffneten ihre Türen und aus Restaurants dringen die Geräusche des Lebens. Während des Sommers blieb es ruhig, nur vereinzelte sterben Menschen am Coronavirus."
-                en="The first wave lasted until the beginning of May and claimed the lives of around <b>126 Zurich residents</b>. The canton breathed a sigh of relief; it seemed to have escaped with a black eye. Streets filled up again, stores opened their doors and the sounds of life emanated from restaurants. During the summer, things remained quiet with only a few people dying from the coronavirus."
+                de="Die erste Welle dauerte bis Anfang Mai und forderte das Leben von rund <b>126 Zürcherinnen und Zürcher.</b> Der Kanton atmete auf, man schien mit einem blauen Auge davongekommen zu sein. Strassen füllen sich wieder, Geschäfte öffneten ihre Türen und aus Restaurants dringen die Geräusche des Lebens. Während des Sommers blieb es ruhig, nur vereinzelte sterben Menschen am Coronavirus."
+                en="The first wave lasted until the beginning of May and claimed the lives of around <b>126 Zurich residents.</b> The canton breathed a sigh of relief; it seemed to have escaped with a black eye. Streets filled up again, stores opened their doors and the sounds of life emanated from restaurants. During the summer, things remained quiet with only a few people dying from the coronavirus."
               />               
             </Chapter>
           </Event>
@@ -156,8 +132,8 @@ function App() {
           <Event id='wave2day270' event={() => setcallEvent('wave2day270')}>
             <Chapter>
               <T lng={lng}
-                de="Draussen leuchten die Adventslichter, in den Notaufnahmen werden die Betten knapp.  Am 10. Dezember <b>wird der Rekord erneut gebrochen</b>: 21 Todesopfer an einem Tag."
-                en="Outside the Advent lights are shining, in the emergency rooms beds are getting scarce. On December 10, <b>the record is broken again</b>: 21 fatalities in one day."
+                de="Draussen leuchten die Adventslichter, in den Notaufnahmen werden die Betten knapp.  Am 10. Dezember <b>wird der Rekord erneut gebrochen:</b> 21 Todesopfer an einem Tag."
+                en="Outside the Advent lights are shining, in the emergency rooms beds are getting scarce. On December 10, <b>the record is broken again:</b> 21 fatalities in one day."
               />
             </Chapter>
           </Event>
@@ -165,8 +141,8 @@ function App() {
           <Event id='wave2day280' event={() => setcallEvent('wave2day280')}>
             <Chapter>
               <T lng={lng}
-                de="Vier Tage vor Heiligabend meldet der Kanton den <b>vorläufigen Höhepunkt: 25 Todesopfer</b>. Auch die statistische Sterblichkeit ist mit 332.5 Todesfällen pro Woche deutlich über dem normalen Wert."
-                en="Four days before Christmas Eve, the canton reports the <b>preliminary peak: 25 fatalities</b>. Moreover the total mortality of 332.5 is well above normal."
+                de="Vier Tage vor Heiligabend meldet der Kanton den <b>vorläufigen Höhepunkt: 25 Todesopfer.</b> Auch die statistische Sterblichkeit ist mit 332.5 Todesfällen pro Woche deutlich über dem normalen Wert."
+                en="Four days before Christmas Eve, the canton reports the <b>preliminary peak: 25 fatalities.</b> Moreover the total mortality of 332.5 is well above normal."
               />
             </Chapter>
           </Event>
@@ -174,8 +150,8 @@ function App() {
           <Event id='wave2day299' event={() => setcallEvent('wave2day299')}>
             <Chapter>
               <T lng={lng}
-                de="Freitag, der 8. Januar. An diesem Tag stirbt der tausendste Zürcher. Erst drei Tage später, nach dem Wochenende, wissen dies die Behörden. Gleichzeitig kommuniziert der Kanton, wie in Pflege- und Altersheimen geimpft werden soll. <b>Ein Hoffnungsschimmer</b>."
-                en="Friday, 8th of january: Covid-19 causes the death of the thousandth Zurich resident. It will be three days later, after the weekend, when the administration will communicate it. At the same time, the canton communicates how vaccination is to be carried out in nursing and old people's homes. <b>A glimmer of hope</b>."
+                de="Freitag, der 8. Januar. An diesem Tag <b>stirbt der tausendste Zürcher.</b> Erst drei Tage später, nach dem Wochenende, wissen dies die Behörden. Am gleichen Tag kommuniziert der Kanton, wie in Pflege- und Altersheimen geimpft werden soll. <b>Ein Hoffnungsschimmer.</b>"
+                en="Friday, 8th of january: Covid-19 causes <b>the death of the thousandth Zurich resident.</b> It will be three days later, after the weekend, when the administration will communicate it. At the same time, the canton communicates how vaccination is to be carried out in nursing and old people's homes. <b>A glimmer of hope.</b>"
               />
             </Chapter>
           </Event>
@@ -189,7 +165,7 @@ function App() {
       </footer>
 
       
-      <Stage callEvent={callEvent}/>
+      <Stage callEvent={callEvent} lng={lng}/>
 
     </div>);
 }
