@@ -105,7 +105,7 @@ function App() {
           <Event id='wave2topdayfirstwave' event={() => setCallEvent('wave2topdayfirstwave')}>
             <Chapter>
               <T lng={lng}
-                de="Bereits nach wenigen Wochen, am 2. November, <b>überschreiten wir den Höchstwert</b> aus der erste Welle – neun Personen sterben an einem einzigen Tag. Es ist ebenfalls jene Woche, in der die statistisch erwartbare Sterblichkeit der über 65-jährigen erneut überschritten wird. Ein Zeichen, dass Corona keine normale Grippe ist."
+                de="Bereits nach wenigen Wochen, am 2. November, <b>überschreiten wir den Höchstwert</b> aus der erste Welle – neun Personen sterben an einem einzigen Tag. Es ist ebenfalls jene Woche, in der die statistisch erwartbare Sterblichkeit der über 65-Jährigen erneut überschritten wird. Ein Zeichen, dass Corona keine normale Grippe ist."
                 en="After just a few weeks, on November 2nd, <b>the peak value from the first wave is exceeded</b>. Nine people die in one single day. This is also the week in which the statistically expected mortality of those over 65 is exceeded. Again. One sign that Corona is not «just like a normal flu»."
               /> 
             </Chapter>
