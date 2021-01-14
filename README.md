@@ -3,6 +3,7 @@
 You may use this project as you wish with one limitation: **You need to licence the 3d model (coffin) or build/buy your own**. I am not the owner of this mesh! [You will find it on cgtrader.com](https://www.cgtrader.com/3d-models/various/various-models/closed-coffin).
   
 Stay healthy!  
+Simon  
 [journalist.sh](https://www.journalist.sh)
 
 ## Installation
