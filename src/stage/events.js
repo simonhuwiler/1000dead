@@ -84,6 +84,7 @@ const chapter_one = (stage, animation) => {
     .to({value: 1}, 1500)
     .easing(TWEEN.Easing.Cubic.InOut)
     .onUpdate(opa => stage.coffins[1].material.opacity = opa.value)
+    .onComplete(() => stage.coffins[1].material.transparent = false)
     .start();
 
   new TWEEN.Tween(stage.camera.position)
