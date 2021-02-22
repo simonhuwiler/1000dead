@@ -45,6 +45,12 @@ function App() {
               en="March 15th: The first Zurich citizen dies of covid-19. This week the State reports the thousandth victim. This is how the virus raged here."
             />
           </h2>
+          <p className='date'>
+            <T lng={lng}
+              de="14. Januar 2021"
+              en="January 14, 2021"
+            />
+          </p>
         </div> 
       </header>
 
