@@ -11,7 +11,7 @@ function T(props)
   if(props.lng === 'de')
     return <span dangerouslySetInnerHTML={{__html: props.de}} />
   else
-  return <span dangerouslySetInnerHTML={{__html: props.en}} />
+    return <span dangerouslySetInnerHTML={{__html: props.en}} />
 }
 
 function App() {
