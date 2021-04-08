@@ -1,5 +1,10 @@
 # 1000 Dead
 
+This is the code for the visual web project: [1000 dead | How the virus raged in Zurich, Switzerland](https://www.journalist.sh/1000dead/). See and scroll through it [here](https://www.journalist.sh/1000dead/).
+
+[![See the (artificial) visualisation](_others/preview.png)](https://youtu.be/LfqSyp0lcNM)
+
+## Be aware
 You may use this project as you wish with one limitation: **You need to licence the 3d model (coffin) or build/buy your own**. I am not the owner of this mesh! [You will find it on cgtrader.com](https://www.cgtrader.com/3d-models/various/various-models/closed-coffin).
   
 Stay healthy!  
